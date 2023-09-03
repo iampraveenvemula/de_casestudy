@@ -34,13 +34,12 @@ A spark cluster is created with 1 master and 2 workers as docker containers runn
 <a name="tasks"></a>
 ## Tasks Performed
 
-- Provided detailed analysis of data in the [Data Profiling](https://github.com/iampraveenvemula/de_casestudy/blob/main/jupyter/notebook/main/1.data_profiling.ipynb) code
-	The resuable helper modules for data profiling: [click here](https://github.com/iampraveenvemula/de_casestudy/blob/main/jupyter/notebook/utils/profiling_utils.ipynb)
-- Written a sample testcase for the activity 
+- Provided detailed analysis of data in the [Data Profiling](https://github.com/iampraveenvemula/de_casestudy/blob/main/jupyter/notebook/main/1.data_profiling.ipynb) code. 
+- The resuable helper modules for data profiling: [click here](https://github.com/iampraveenvemula/de_casestudy/blob/main/jupyter/notebook/utils/profiling_utils.ipynb)
+- Written a sample testcase for the activity: standardize_annual_salary in the folder: [tests](https://github.com/iampraveenvemula/de_casestudy/tree/main/jupyter/notebook/tests)
 - Performed data cleaning and feature engineering, extracted 3 key features utilized in KPI analysis. 
-	Features required for KPI analysis are selected and stored under processed data. 
-	code file: [Feature Engineering](https://github.com/iampraveenvemula/de_casestudy/blob/main/jupyter/notebook/main/2.data_preprocessing_feature_extraction.ipynb)
-	The resuable helper modules for data preparation: [click here](https://github.com/iampraveenvemula/de_casestudy/blob/main/jupyter/notebook/utils/prep_utils.ipynb)
+- Features required for KPI analysis are selected and stored under processed data. code file: [Feature Engineering](https://github.com/iampraveenvemula/de_casestudy/blob/main/jupyter/notebook/main/2.data_preprocessing_feature_extraction.ipynb)
+- The resuable helper modules for data preparation: [click here](https://github.com/iampraveenvemula/de_casestudy/blob/main/jupyter/notebook/utils/prep_utils.ipynb)
 
 		Features Extracted:
 			 1. Annual Salary From & Annual Salary To & Average Annual Salary: The salary column is not uniform, salary frequency is different across records, standardized salary from and salary to columns to annual level and derived Average Annual Salary for each posting.
@@ -48,9 +47,9 @@ A spark cluster is created with 1 master and 2 workers as docker containers runn
 			 3. Skills as ngrams: from Preferred SKills column, extracted skills information by performing text cleaning, transformations using nltk library
 
 
-- The KPI analysis is done under the file: [KPI Analysis](https://github.com/iampraveenvemula/de_casestudy/blob/main/jupyter/notebook/main/3.kpi_analysis.ipynb)
-  The results & plots are saved under the [kpi_plots](https://github.com/iampraveenvemula/de_casestudy/tree/main/kpi_plots) directory
-  The resuable helper modules for kpi analysis: [click here](https://github.com/iampraveenvemula/de_casestudy/blob/main/jupyter/notebook/utils/kpi_utils.ipynb)
+- The KPI analysis is done under the file: [KPI Analysis](https://github.com/iampraveenvemula/de_casestudy/blob/main/jupyter/notebook/main/3.kpi_analysis.ipynb).
+- The results & plots are saved under the [kpi_plots](https://github.com/iampraveenvemula/de_casestudy/tree/main/kpi_plots) directory.
+- The resuable helper modules for kpi analysis: [click here](https://github.com/iampraveenvemula/de_casestudy/blob/main/jupyter/notebook/utils/kpi_utils.ipynb).
   
 <a name="assumptions"></a>
 ## Assumptions
@@ -106,6 +105,7 @@ Within the CD pipeline, create a deployment stage:
 Example:
 ```shell
 spark-submit --master <master-url> --conf <config-file> your_main_script.py
+```
 
 #### 7. Result Storage
 
@@ -113,4 +113,5 @@ Store the data profiling reports, feature-engineered datasets, and kpi plots int
 
 #### 8. Scheduling with Apache Airflow
 
-To automate the execution of the PySpark data pipelines on a scheduled basis, you can leverage Apache Airflow, an open-source workflow automation tool. Airflow allows us to define, schedule, and monitor your data pipeline tasks with ease.
+To automate the execution of the PySpark data pipelines on a scheduled basis, we can leverage Apache Airflow, an open-source workflow automation tool. 
+Airflow allows us to define, schedule, and monitor your data pipeline tasks with ease.
